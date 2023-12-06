@@ -19,20 +19,20 @@ const Books = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Book List</h1>
-      <ul>
+    <div className="book-list">
+      <div className="book-container">
         {books.map((book) => (
-          <div key={book.id}>
-            <h2>{book.title}</h2>
-            <p>{book.author}</p>
+          <div key={book.id} className="book-card">
+            <h2 className="book-title">{book.title}</h2>
+            <p className="book-author">{book.author}</p>
             <img src={book.coverimage} alt={book.title} />
-            <p>{book.available ? "Available" : "Not Available"}</p>
+            <p className="book-availability">
+              {book.available ? "Available" : "Not Available"}
+            </p>
           </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
-
 export default Books;

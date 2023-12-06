@@ -1,0 +1,68 @@
+/* app.css */
+html {
+    
+}
+#root{
+    
+}
+
+.book-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+
+}
+/* Style for the Book List container */
+.book-list {
+    text-align: center;
+    margin: 20px;
+  }
+  
+
+  
+  
+  /* Style for each book card */
+  .book-card {
+    margin:5px;
+    padding: 10px;
+    border: 5px solid #000000;
+    border-radius: 5px;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    width: 10%;
+    justify-content: center;
+    align-items:center;
+    background-color:#d6d5d5 ;
+    
+  }
+  
+  .book-card img {
+    max-width: 100%;
+    margin-bottom: 10px;
+    
+  }
+  
+  /* Style for book titles */
+  .book-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  /* Style for book authors */
+  .book-author {
+    font-style: italic;
+    color: #2e2d2d;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for availability text */
+  .book-availability {
+    font-weight: bold;
+  }
+
+  .mainHeader{
+    text-align: center;
+
+  }
