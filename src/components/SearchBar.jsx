@@ -1,28 +1,19 @@
 import React, { useState } from "react";
 import "../../src/App.css";
 
-export default function SearchBar({ onSearch }) {
+const SearchBar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleInputChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    onSearch(searchQuery);
-  };
-
-  const handleButtonClick = (e) => {
-    e.preventDefault();
-    handleSearch(e);
+    const query = e.target.value;
+    setSearchQuery(query);
+    onSearch(query); // Call onSearch with the updated query
   };
 
   return (
     <div className="search-bar-container">
-      {" "}
       <div className="search-bar">
-        <h2>Search for book here!</h2>
+        <h2>Search for a book here!</h2>
         <input
           type="text"
           className="bar"
@@ -30,9 +21,9 @@ export default function SearchBar({ onSearch }) {
           value={searchQuery}
           onChange={handleInputChange}
         />
-        <button onClick={handleButtonClick}>Search</button>
-        <h3></h3>
       </div>
     </div>
   );
-}
+};
+
+export default SearchBar;

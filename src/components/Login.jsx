@@ -9,22 +9,16 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Call loginUser function with email and password
     loginUser(email, password)
       .then((userData) => {
-        // Handle successful login, e.g., store user data, redirect
         console.log("Login successful:", userData);
 
-        // Show an alert for successful login
         alert("Login successful!");
 
-        // After successful login, navigate to another route
-        navigate("/"); // Adjust the route accordingly
+        navigate("/");
       })
       .catch((error) => {
-        // Handle login failure or network error
         console.error("Login failed:", error);
-        // Optionally, you can display an error message to the user
       });
     navigate("/");
   };

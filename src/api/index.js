@@ -58,6 +58,38 @@ const registerUser = async () => {
 };
 
 
+const getBookById = async (bookId) => {
+    const apiUrl = `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${bookId}`;
+  
+    try {
+      const response = await axios.get(apiUrl);
+      return response.data.book || null;
+    } catch (error) {
+      console.error("Error fetching book details:", error);
+      throw error;
+    }
+  };
+  
+ 
+
+  const patchBook = async (bookId, action) => {
+    const apiUrl = `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${bookId}`;
+  
+    try {
+      const response = await axios.patch(apiUrl, { action });
+  
+      // Log the response or handle it as needed
+      console.log(response.data);
+  
+      return response.data;
+    } catch (error) {
+      console.error('Error patching book:', error);
+      throw error;
+    }
+  };
+  
+ 
+  
 
 
-export { getAllBooks, registerUser, loginUser };
+export { getAllBooks, registerUser, loginUser, getBookById, patchBook   };
