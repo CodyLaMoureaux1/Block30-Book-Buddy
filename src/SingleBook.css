@@ -19,44 +19,17 @@
     
   }
 
-  
-  
-  .book-card img {
-    max-width: 80%;
-    margin-bottom: 10px;
-    
-    
-  }
-  
-  
-  .book-title1 {
-    min-width: 80%;
-    font-size: 20px;
-    margin-bottom: 5px;
+  .book1{
+    width: 100%;
     text-align: center;
   }
   
-  
-  .book-author1 {
-    font-style: italic;
-    color: #2e2d2d;
-    margin-bottom: 10px;
-    min-width: 80%;
-    text-align: center;
-    
-    
-  }
-  
-  
-  .book-availability1 {
-    font-weight: bold;
-    min-width: 80%;
+  .author1{
+    width: 100%;
     text-align: center;
   }
 
-  
-  .book-details img {
-    max-width: 80%;
-    margin: 0 auto; 
-    display: block; 
+  .description{
+    font-size:medium;
   }
+  

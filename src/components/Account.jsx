@@ -1,24 +1,35 @@
-import React, { useState, useEffect } from "react";
-import { patchBook } from "../api";
+import { useState, useEffect } from "react";
+import { getLoggedInUserInfo, patchBook } from "../api";
 
 const Account = () => {
-  const [books, setBooks] = useState([]);
+  const [userBooks, setUserBooks] = useState([]);
 
   useEffect(() => {
-    handleCheckout("bookId123");
+    fetchUserBooks();
   }, []);
 
-  const handleCheckout = async (bookId) => {
+  const fetchUserBooks = async () => {
     try {
-      await patchBook(bookId, "checkout");
+      const userInfo = await getLoggedInUserInfo();
+
+      if (userInfo) {
+        const checkedOutBooks = userInfo.books;
+        console.log("Checked Out Books:", checkedOutBooks);
+        setUserBooks(checkedOutBooks);
+      }
     } catch (error) {
-      console.error("Error checking out book:", error);
+      console.error("Error fetching user books:", error);
     }
   };
 
   const handleReturn = async (bookId) => {
+    console.log("Returning book with ID:", bookId);
+
     try {
       await patchBook(bookId, "return");
+      console.log("Book returned successfully");
+
+      fetchUserBooks();
     } catch (error) {
       console.error("Error returning book:", error);
     }
@@ -26,10 +37,18 @@ const Account = () => {
 
   return (
     <div>
-      <button onClick={() => handleCheckout("bookId123")}>
-        Check Out Book
-      </button>
-      <button onClick={() => handleReturn("bookId123")}>Return Book</button>
+      <h1 className="myAccount">My Account</h1>
+      <div className="book-container">
+        {userBooks.map((book) => (
+          <div key={book.id} className="book-card">
+            <h2 className="book-title">{book.title}</h2>
+            <p className="book-author">{book.author}</p>
+            <img src={book.coverimage} alt={book.title} />
+            <p className="book-availability">Checked Out</p>
+            <button onClick={() => handleReturn(book.id)}>Return</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

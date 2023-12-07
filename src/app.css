@@ -116,12 +116,14 @@
   
   .search-bar {
     text-align: center;
-    width: 50%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 15px;
+    
   }
 
-  .bar{
-    width: 50%;
-  }
+  
 
   .login-container {
     max-width: 400px;
@@ -163,4 +165,7 @@
     margin-top: 15px;
   }
 
+  .myAccount{
+    text-align: center;
+  }
  

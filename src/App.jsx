@@ -1,17 +1,17 @@
-import React from "react";
-import Books from "./components/Books";
-import "./app.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigations from "./components/Navigations";
 import SearchBar from "./components/SearchBar";
+import Books from "./components/Books";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import SingleBook from "./components/SingleBook";
+import Account from "./components/Account";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <>
+    <Router>
+      <div>
         <Navigations />
         <Routes>
           <Route
@@ -24,11 +24,12 @@ const App = () => {
           />
           <Route path="/books" element={<Books />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/api/books/:bookId" element={<SingleBook />} />{" "}
+          <Route path="/api/books/:bookId" element={<SingleBook />} />
+          <Route path="/account" element={<Account />} />
           <Route path="/register" element={<Register />} />
         </Routes>
-      </>
-    </BrowserRouter>
+      </div>
+    </Router>
   );
 };
 
