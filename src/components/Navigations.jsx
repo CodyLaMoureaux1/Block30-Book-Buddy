@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import SearchBar from "./SearchBar";
 
 export default function Navigations() {
@@ -13,6 +13,11 @@ export default function Navigations() {
           <li>
             <Link onClick={() => setNavigating(true)} to={`/register`}>
               Register
+            </Link>
+          </li>
+          <li>
+            <Link onClick={() => setNavigating(true)} to={`/`}>
+              Home
             </Link>
           </li>
           <li>

@@ -74,15 +74,17 @@ html {
 
   .mainHeader{
     text-align: center;
-    margin: 2%;
-    border: 5px solid black;
+    margin: 1.85%;
+    border: 5px solid rgb(143, 143, 143);
     padding: 30px;
     border-radius: 10px;
+    background-color: #cccccc;
 
   }
 
   .navigation-menu{
-   border: 3px solid black;
+    border: 5px solid rgb(153, 153, 153);
+    background-color: #cccccc;
     margin: 30px;
     border-radius: 10px;
   }
@@ -92,6 +94,8 @@ html {
     justify-content:space-around;
     
   }
+
+ 
 
   .search-bar-container {
     display: flex;
@@ -110,3 +114,45 @@ html {
   .bar{
     width: 50%;
   }
+
+  .login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #ccc;
+    
+  }
+  
+  .form-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px; 
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .form-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    width: 100%; 
+  }
+  
+  .form-message {
+    margin-top: 15px;
+  }
+
+ 

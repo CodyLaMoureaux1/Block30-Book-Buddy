@@ -4,21 +4,30 @@ import "./app.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigations from "./components/Navigations";
 import SearchBar from "./components/SearchBar";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 const App = () => {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <>
         <Navigations />
-        <SearchBar />
         <Routes>
-          <Route path="/api/users/register" element={<Navigations />} />
-          <Route path="/" element={<Books />} />
+          <Route
+            path="/"
+            element={
+              <div>
+                <SearchBar />
+                <Books />
+              </div>
+            }
+          />
+          <Route path="/books" element={<Books />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
-      </BrowserRouter>
-
-      <Books />
-    </>
+      </>
+    </BrowserRouter>
   );
 };
 

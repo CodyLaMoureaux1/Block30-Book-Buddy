@@ -8,4 +8,56 @@ const getAllBooks = async () => {
 
 };
 
-export { getAllBooks };
+
+
+const registerUser = async () => {
+    try {
+      const response = await axios.post(
+        'https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/register',
+        {
+          firstname: 'Sam',
+          lastname: 'Smith',
+          email: 'ssmith@example.com',
+          password: 'sam345',
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+  
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error:', error.message);
+      
+    }
+  };
+  
+  const loginUser = async (email, password) => {
+    try {
+        const response = await axios.post(
+            'https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login',
+            {
+                email: email,
+                password: password,
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+        );
+           
+        console.log(response.data);
+        return response.data; 
+    } catch (error) {
+        console.error('Error:', error.message);
+        throw error;
+    }
+};
+
+
+
+
+export { getAllBooks, registerUser, loginUser };
