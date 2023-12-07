@@ -10,7 +10,7 @@ html {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
 /* Style for the Book List container */
@@ -24,30 +24,34 @@ html {
   
   /* Style for each book card */
   .book-card {
-    margin:5px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 5%;
     padding: 10px;
-    border: 5px solid #000000;
-    border-radius: 5px;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
     text-align: left;
     display: flex;
     flex-wrap: wrap;
-    width: 10%;
+    width: 24%;
     justify-content: center;
     align-items:center;
-    background-color:#d6d5d5 ;
+    background-color:#b8b8b8 ;
     
   }
   
   .book-card img {
-    max-width: 100%;
+    max-width: 80%;
     margin-bottom: 10px;
     
   }
   
   /* Style for book titles */
   .book-title {
-    font-size: 18px;
+    min-width: 80%;
+    font-size: 20px;
     margin-bottom: 5px;
+    text-align: center;
   }
   
   /* Style for book authors */
@@ -55,14 +59,54 @@ html {
     font-style: italic;
     color: #2e2d2d;
     margin-bottom: 10px;
+    min-width: 80%;
+    text-align: center;
+    
+    
   }
   
   /* Style for availability text */
   .book-availability {
     font-weight: bold;
+    min-width: 80%;
+    text-align: center;
   }
 
   .mainHeader{
     text-align: center;
+    margin: 2%;
+    border: 5px solid black;
+    padding: 30px;
+    border-radius: 10px;
 
+  }
+
+  .navigation-menu{
+   border: 3px solid black;
+    margin: 30px;
+    border-radius: 10px;
+  }
+
+  .navbar{
+    display: flex;
+    justify-content:space-around;
+    
+  }
+
+  .search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    width: 100%;
+    
+  }
+  
+  .search-bar {
+    text-align: center;
+    width: 50%;
+  }
+
+  .bar{
+    width: 50%;
   }

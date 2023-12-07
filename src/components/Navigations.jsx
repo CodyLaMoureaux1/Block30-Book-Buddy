@@ -1,1 +1,27 @@
-/* TODO - add your code to create a functional React component that renders a navigation bar for the different views in your single page application. You may consider conditionally rendering some options - for example 'Login' should be available if someone has not logged in yet. */
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import SearchBar from "./SearchBar";
+
+export default function Navigations() {
+  const [navigating, setNavigating] = useState(false);
+
+  return (
+    <nav className="nav1">
+      <h1 className="mainHeader">My Book App</h1>
+      <div className="navigation-menu">
+        <ul className="navbar">
+          <li>
+            <Link onClick={() => setNavigating(true)} to={`/register`}>
+              Register
+            </Link>
+          </li>
+          <li>
+            <Link onClick={() => setNavigating(true)} to={`/login`}>
+              Login
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+}
