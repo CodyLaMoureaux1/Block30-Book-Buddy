@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getLoggedInUserInfo, patchBook } from "../api";
+import { getBookById } from "../api";
 
 const Account = () => {
   const [userBooks, setUserBooks] = useState([]);
@@ -23,15 +24,15 @@ const Account = () => {
   };
 
   const handleReturn = async (bookId) => {
-    console.log("Returning book with ID:", bookId);
-
     try {
+      // Perform the operation using the patchBook function
       await patchBook(bookId, "return");
       console.log("Book returned successfully");
 
+      // Fetch updated user books after the operation
       fetchUserBooks();
     } catch (error) {
-      console.error("Error returning book:", error);
+      console.error("Error handling book return:", error);
     }
   };
 

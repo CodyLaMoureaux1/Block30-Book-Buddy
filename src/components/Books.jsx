@@ -18,6 +18,7 @@ const Books = () => {
       const booksData = await getAllBooks();
       setBooks(booksData);
       setFilteredBooks(booksData);
+      console.log(booksData);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
